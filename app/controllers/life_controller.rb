@@ -4,6 +4,7 @@ class LifeController < ApplicationController
   def index
     set_params
     @@life = Life.new(@cols, @rows)
+    @max_width = calculate_max_width
   end
 
   def start
@@ -20,12 +21,13 @@ class LifeController < ApplicationController
 
   def clear
     @@life = Life.new(@cols, @rows)
+    @max_width = calculate_max_width
   end
 
   private
   def set_params
-    @cols = params[:cols].to_i > 50 ? 50 : params[:cols].to_i if !params[:cols].nil?
-    @rows = params[:rows].to_i > 50 ? 50 : params[:rows].to_i if !params[:rows].nil?
+    @cols = params[:cols].to_i if !params[:cols].nil? #params[:cols].to_i > 50 ? 50 :
+    @rows = params[:rows].to_i if !params[:rows].nil? #params[:rows].to_i > 50 ? 50 :
     @box_size = box_size
   end
 

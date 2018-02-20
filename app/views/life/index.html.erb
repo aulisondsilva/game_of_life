@@ -18,7 +18,7 @@
     <ul>
       <li>Default value for row and cols are 20.</li>
       <li>On Grid view if you do mouse hover the cells will be selected.</li>
-      <li>Max grid size is 50 X 50</li>
+      <li>Max grid size is 100 X 100</li>
     </ul>
 
   </div>
@@ -30,7 +30,7 @@
   <div class="clear">
     <i class="fa fa-times fa-2x"></i>
   </div>
-  <div class="game-wrapper box-<%= @box_size %>" style="max-width: <%= (@rows * (@box_size + 3)) + 10 %>px">
+  <div class="game-wrapper box-<%= @box_size %>" style="max-width: <%= @max_width %>px">
     <!--<div>Create grid : Rows <#%= text_field_tag%></div>-->
     <div class="game">
       <%= render partial: 'grid' %>
